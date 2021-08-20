@@ -4,13 +4,15 @@ Based on https://github.com/confluentinc/confluent-kafka-dotnet/tree/master/exam
 
 Written to be run on Windows.  I don't know Windows that well.
 
-Steps:
+# Steps:
 
 ## Install prereqs
 
 Install both .NET Core 3.x and 5.x (or at least 3.x; you don't necessarily need 5.x but you'll need to modify the csproj files)
 
-## Install the avrogen tool () - note the use of the Apache version of this, instead of the Confluent one; we've deprecated the Confluent one in favor of Apache
+## Install the avrogen tool
+
+Note the use of the Apache version of this, instead of the Confluent one; we've deprecated the Confluent one in favor of Apache
 
 ```bash
 dotnet tool install -g Apache.Avro.Tools
@@ -21,7 +23,7 @@ dotnet tool install -g Apache.Avro.Tools
 ## Use avrogen on LogMessage.asvc to generate a set of .cs classes for the "LogMessage" message class (requires .NET 3.x)
 
 ```bash
-avrogen -s  .\LogMessage.asvc .
+avrogen -s .\LogMessage.asvc .
 ```
 
 Should result in two .cs files:
